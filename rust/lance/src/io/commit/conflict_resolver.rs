@@ -1786,6 +1786,7 @@ mod tests {
             fields_for_preserving_frag_bitmap: vec![],
             update_mode: None,
             inserted_rows_filter: None,
+            updated_row_offsets: None,
         };
         let transaction = Transaction::new_from_version(1, operation);
         let other_operations = [
@@ -1798,6 +1799,7 @@ mod tests {
                 fields_for_preserving_frag_bitmap: vec![],
                 update_mode: None,
                 inserted_rows_filter: None,
+                updated_row_offsets: None,
             },
             Operation::Delete {
                 deleted_fragment_ids: vec![3],
@@ -1813,6 +1815,7 @@ mod tests {
                 fields_for_preserving_frag_bitmap: vec![],
                 update_mode: None,
                 inserted_rows_filter: None,
+                updated_row_offsets: None,
             },
         ];
         let other_transactions = other_operations.map(|op| Transaction::new_from_version(2, op));
@@ -1915,6 +1918,7 @@ mod tests {
                 fields_for_preserving_frag_bitmap: vec![],
                 update_mode: None,
                 inserted_rows_filter: None,
+                updated_row_offsets: None,
             },
             Operation::Delete {
                 updated_fragments: vec![apply_deletion(&[1], &mut fragment, &dataset).await],
@@ -1930,6 +1934,7 @@ mod tests {
                 fields_for_preserving_frag_bitmap: vec![],
                 update_mode: None,
                 inserted_rows_filter: None,
+                updated_row_offsets: None,
             },
         ];
         let transactions =
@@ -2052,6 +2057,7 @@ mod tests {
                     fields_for_preserving_frag_bitmap: vec![],
                     update_mode: None,
                     inserted_rows_filter: None,
+                    updated_row_offsets: None,
                 },
             ),
             (
@@ -2065,6 +2071,7 @@ mod tests {
                     fields_for_preserving_frag_bitmap: vec![],
                     update_mode: None,
                     inserted_rows_filter: None,
+                    updated_row_offsets: None,
                 },
             ),
             (
@@ -2225,6 +2232,7 @@ mod tests {
                 fields_for_preserving_frag_bitmap: vec![],
                 update_mode: None,
                 inserted_rows_filter: None,
+                updated_row_offsets: None,
             },
             create_update_config_for_test(
                 Some(HashMap::from_iter(vec![(
@@ -2431,6 +2439,7 @@ mod tests {
                     fields_for_preserving_frag_bitmap: vec![],
                     update_mode: None,
                     inserted_rows_filter: None,
+                    updated_row_offsets: None,
                 },
                 [
                     Compatible,    // append
@@ -2953,6 +2962,7 @@ mod tests {
                 fields_for_preserving_frag_bitmap: vec![],
                 update_mode: None,
                 inserted_rows_filter: None,
+                updated_row_offsets: None,
             },
         ];
 

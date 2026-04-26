@@ -3267,3 +3267,5 @@ impl Projectable for Dataset {
 
 #[cfg(test)]
 mod tests;
+#[cfg(test)]
+mod transaction_test_row_offsets;
